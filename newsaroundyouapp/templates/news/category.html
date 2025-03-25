@@ -1,0 +1,17 @@
+{% extends "./home.html" %}
+{% block news_heading %}
+    <h2>Top-<span>headlines</span> in <span>{{ category }}</span></h2>
+{% endblock %}
+{% block news_card %}
+    {% for item in news_collection %}
+        <div class="news-card">
+            <img src="{{ item.urlToImage }}" alt="image related to headline" width="100px">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <a href="{{ item.url }}" target="_blank">Read More</a>
+            <h5>By: {{ item.author }}</h5>
+            <h5>From: {{ item.source.name }}</h5>
+            <h5>Published at: {{ item.publishedAt }}</h5>
+        </div>
+    {% endfor %}
+{% endblock %}

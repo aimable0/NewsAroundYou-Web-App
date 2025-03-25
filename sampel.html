@@ -1,0 +1,24 @@
+{% extends "./home.html" %}
+{% block news_heading %}
+    <h2>What's <span>Happening</span> around what you searched for</h2>
+{% endblock %}
+{% block news_card %}
+    {% for headline in news %}
+        <div class="news-card">
+            <h3>{{ headline['title'] }}</h3>
+            <p>{{ headline['description'] }}</p>
+            <h5>Published at: {{ headlinine['publishedAt'] }}</h5>
+            <h5>By: {{ headline['author'] }}</h5>
+            <h6>From: {{ headline['source']['name'] }}</h6>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+<!--
+        <!-- <h3>{{ headline['title'] }}</h3>
+        <p>{{ headline['description'] }}</p>
+        <h5>Published at: {{ headlinine['publishedAt'] }}</h5>
+        <h5>By: {{ headline['author'] }}</h5>
+        <h6>From: {{ headline['source']['name'] }}</h6> -->
+
+-->

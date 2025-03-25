@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+</head>
+<body>
+    <header class="content">
+        <img src="{% static 'img/logo.png' %}" alt="" width="150px">
+        <nav>
+            <ul>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'general' %}">General</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'business' %}">Business</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'entertainment' %}">Entertainment</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'health' %}">Health</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'science' %}">Science</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'sports' %}">Sports</a></li>
+                <li><a href="{% url 'newsaroundyouapp:search_by_category' 'technology' %}">Technology</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <div class="banner">
+            <!-- <h1 id="welcome">Welcome to NewsAroundYou!</h1> -->
+            <div class="stayinformed">
+                <h2>Get informed on the <span>topics</span> that <span>matters most</span> to you!</h2>
+                <h4 id="title_2">All the way From The world's best sources to here at NewsAroundYou!</h4>
+            </div>
+            <div class="search">
+                <h4>Anything you want to know <span>About</span> ?</h4>
+                <form action="{% url 'newsaroundyouapp:search' %}" method="GET">
+                    <div class="search-bar">
+                        <img src="{% static 'img/search-i.png' %}" alt="search-icon" width="20px" id="search-icon">
+                        <input type="search" name="q" id="search_input">
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" value="Search" id="button">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="recent-articles">
+            {% block news_heading %}
+            {% endblock %}
+            {% block news_card %}
+            {% endblock %}
+        </div>
+        <div class="pagination">
+            <button id="prevPage" disabled>Previous</button>
+            <span id="pageNumber">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </main>
+    <div class="content sources-block">
+        <h4>From The world's Trusted Sources</h4>
+        <ul class="sources">
+            <li><img src="{% static 'img/BBC-News-Logo-1997.png' %}" alt="" width="300px"></li>
+            <li><img src="{% static 'img/CNN.svg.png' %}" alt="" width="120px"></li>
+            <li><img src="{% static 'img/ESPN_logos.png' %}" alt="" width="200px"></li>
+            <li><img src="{% static 'img/Reuters_Logo.svg.png' %}" width="200px"></li>
+            <li><img src="{% static 'img/Abc-news-logo.png' %}" alt="" width="200px"></li>
+            <li><img src="{% static 'img/france24logo.png' %}" alt="" width="100px"></li>
+        </ul>
+    </div>
+    <footer>
+        &copy; NewsAroundYou - 2025 | All rights reserved
+        <p>Website designed by Aimable Nkurikiyimana</p>
+    </footer>
+</body>
+</html>
