@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 import json
-from dotenv import load_dotenv, find_dotenv, dotenv_values
+from dotenv import load_dotenv, find_dotenv
+import os
 
 env_path = find_dotenv(".env")
-key = dotenv_values(env_path)
-API_KEY = key['API_KEY']
+load_dotenv(env_path)
+API_KEY = os.getenv("API_KEY")
 
 
 # Create your views here.
