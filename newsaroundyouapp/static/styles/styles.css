@@ -219,3 +219,15 @@ span {
     padding-left: 3px;
     padding-right: 3px;
 }
+
+/* testing footer placement */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+}
