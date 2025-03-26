@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>News Around You</title>
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
     <link rel="stylesheet" href="{% static 'styles/header.css' %}">
     <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
@@ -20,6 +20,7 @@
                 <h1><span>503</span></h1>
                 <h2>Oops! Rate <span>Limit</span> Reached!</h2>
                 <h4 id="title_2">Try Again after some hours!</h4>
+                <h5><a href="{% url 'newsaroundyouapp:home' %}">Go Back</a></h5>
             </div>
         </div>
     </main>

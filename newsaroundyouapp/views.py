@@ -35,8 +35,12 @@ def search(request):
             "news/search.html",
             {"news_collection": news_collection, "search_keyword": search_keyword},
         )
+    except KeyError:
+        # testing something
+        return render(request, "news/error.html")
     except ConnectionError:
         error_page(request)
+
 
 
 def search_by_category(request, category):
