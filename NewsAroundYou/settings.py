@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "54.147.6.33",
+    "web-01.naimable.tech",
     "3.86.34.43",
     "127.0.0.1",
 ]
